@@ -28,14 +28,14 @@
       <td scope="col">{{ item.id }}</td>
       <td scope="col">{{item.prenom }}</td>
       <td scope="col">{{item.nom }}</td>
-      <th scope="col">{{item.Telephone }}</th>
-      <th scope="col">{{item.Email }}</th>
-      <th scope="col">{{item.Adresse }}</th>
-      <th scope="col">{{item.Poste }}</th>
-      <th scope="col">{{item.Salaire }}</th>
-      <th scope="col">{{item.Datedenaissance}}</th>
+      <th scope="col">{{item.telephone }}</th>
+      <th scope="col">{{item.email }}</th>
+      <th scope="col">{{item.adresse }}</th>
+      <th scope="col">{{item.poste }}</th>
+      <th scope="col">{{item.salaire }}</th>
+      <th scope="col">{{item.datedenaissance}}</th>
 
-      <a href="{{ path('edit', {id:item.id}) }}" class="btn btn-info">Editer</a>
+      <a href="{{ path('edit', {id : item.id}) }}" class="btn btn-info">Editer</a>
     </tr>
    
  

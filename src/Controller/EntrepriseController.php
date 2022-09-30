@@ -17,7 +17,7 @@ class EntrepriseController extends AbstractController
     /**
      * @Route("/entreprise", name="app_entreprise")
      */
-    public function index( Employerepository $repo): Response
+    public function index(Employerepository $repo): Response
     {
         $employe = $repo->findAll();
 
@@ -29,15 +29,10 @@ class EntrepriseController extends AbstractController
         ]);
     }
     /**
-     * @Route("/entreprise/edit/{id}" name="app_edit")
-     * @Route("/entreprise/ajoute" name="ajout")
-     *
-     * @param Request $globals
-     * @param EntityManagerInterface $manager
-     * @param Employe $employe
-     * @return void
+     * @Route("/entreprise/edit/{id}", name="edit")
+     * @Route("/entreprise/ajout", name="ajout")
      */
-    public function form(Request $globals, EntityManagerInterface $manager, Employe $employe)
+    public function form(Request $globals, EntityManagerInterface $manager, Employe $employe = null)
 
     {
      if($employe == null){
@@ -56,7 +51,7 @@ class EntrepriseController extends AbstractController
 
      return $this->renderForm('entreprise/form.html.twig', [
         'form' => $form,
-        'edit' => $employe->getId() !== null
+        'editMode' => $employe->getId() !== null
      ]) ;
     }
 

@@ -7,7 +7,7 @@
 
 
 
-{{ form_start(formEmploye) }}
+{{ form_start(form) }}
 
 {{ form_row(form.prenom) }}
 {{ form_row(form.nom) }}
@@ -16,10 +16,11 @@
 {{ form_row(form.adresse) }}
 {{ form_row(form.poste) }}
 {{ form_row(form.salaire) }}
-{{ form_row(form.Datedenaissance) }}
+{{ form_row(form.datedenaissance) }}
 
 
 <button type="submit" class="btn btn-primary">
+
 {% if editMode %}
    enregistrer les modif
 {% else %}
@@ -28,3 +29,5 @@
 </button>
 
 {{ form_end(form) }}
+
+{% endblock %}
