@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EntrepriseController!{% endblock %}
+
+{% block body %}
+
+<h1>EMPLOYES</h1>
+
+
+<table class="table container">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Telephone</th>
+      <th scope="col">Email</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Poste</th>
+      <th scope="col">Salaire</th>
+      <th scope="col">Date de Naissance</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in employe %}
+
+    <tr>
+      <td scope="col">{{ item.id }}</td>
+      <td scope="col">{{item.prenom }}</td>
+      <td scope="col">{{item.nom }}</td>
+      <th scope="col">{{item.Telephone }}</th>
+      <th scope="col">{{item.Email }}</th>
+      <th scope="col">{{item.Adresse }}</th>
+      <th scope="col">{{item.Poste }}</th>
+      <th scope="col">{{item.Salaire }}</th>
+      <th scope="col">{{item.Datedenaissance}}</th>
+
+      <a href="{{ path('edit', {id:item.id}) }}" class="btn btn-info">Editer</a>
+    </tr>
+   
+ 
+{% endfor %}
+  </tbody>
+
+  
+</table>
+
+<a href="{{ path('ajout')}}"><button type="submit" class="btn btn-success">ajouter employer</button></a>
+
+{% endblock %}
